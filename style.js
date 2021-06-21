@@ -49,6 +49,14 @@ function verifyPin() {
     else {
         document.getElementById("incorrectPin").style.display = "block";
         document.getElementById("correctPin").style.display = "none";
+        const remaining = document.getElementById("remaining");
+        remaining.innerText = remaining.innerText - 1;
+
+        if (remaining.innerText == 0) {
+            document.getElementById("btn").style.display = "none";
+            remaining.innerText = "0";
+        }
+
     }
 }
 
